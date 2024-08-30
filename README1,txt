@@ -11,3 +11,59 @@ INSTRUCTIONS TO INSTALL DEPENDENCIES:
 *open "poppler-24.07.0" ->library->bin 
 *copy its path and add it to your environmental variables->path
 
+PDF-based Chatbot with Cohere Embedding and Search
+
+This Streamlit application allows users to upload a PDF document, extract text using Tesseract OCR, generate text embeddings using Cohere, and then ask questions about the extracted text. The chatbot utilizes Cohere's large language model to retrieve relevant passages from the document and provide answers to the user's queries.
+
+Features:
+
+    PDF Upload: Upload a PDF document to be processed.
+    Text Extraction: Uses Tesseract OCR to extract text from each page of the PDF.
+    Text Cleaning: Removes unnecessary whitespace and empty lines.
+    Embedding Generation: Generates Cohere embeddings for each extracted text segment.
+    Search Index Creation: Creates an Annoy index for efficient nearest neighbor search.
+    User Query Input: Allows users to ask questions about the uploaded PDF content.
+    Search and Answer Retrieval: Searches the text archive and retrieves potentially relevant passages using the embedding-based search index.
+    Answer Extraction: Uses Cohere's large language model to extract the answer to the user's question from the retrieved context.
+    Multiple Answer Generation (Optional): Optionally generates multiple answers for the user (configurable).
+
+Requirements:
+
+    Streamlit (pip install streamlit)
+    Cohere API Key (https://cohere.com/)
+    Tesseract OCR ([invalid URL removed])
+    pytesseract (wrapper for Tesseract OCR, pip install pytesseract)
+    pdf2image (for PDF to image conversion, pip install pdf2image)
+    annoy (approximate nearest neighbor library, pip install annoy)
+
+Installation:
+
+    Install the required libraries:
+    Bash
+
+    pip install streamlit cohere pytesseract pdf2image annoy multiprossing
+
+    Use code with caution.
+
+    Set up your Cohere API key:
+        Create an account on Cohere (https://cohere.com/) and obtain an API key.
+        Place your API key in the cohere.Client(api_key='YOUR_API_KEY') line of the code.
+    Install Tesseract OCR (if not already installed) and configure its path if necessary. Refer to the Tesseract documentation for configuration details ([invalid URL removed]).
+
+Usage:
+
+    Run the script: streamlit run app.py (replace app.py with your script filename).
+    Upload a PDF document.
+    Ask questions about the uploaded document's content in the text input field.
+    The chatbot will retrieve potentially relevant passages and provide answer(s).
+
+Notes:
+
+    The accuracy of the chatbot's answers depends on the quality of the uploaded PDF, the accuracy of Tesseract OCR, and the effectiveness of Cohere's language model for the specific task.
+    Consider refining Tesseract OCR settings and experiment with Cohere model parameters for optimal results.
+
+Further Enhancements:
+
+    Implement a mechanism to handle cases where the answer cannot be found in the document.
+    Explore other search indexing techniques beyond Annoy for potentially improved performance.
+    Add functionality to highlight retrieved passages in the UI for better context visualization.
