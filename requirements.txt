@@ -1,0 +1,11 @@
+streamlit
+cohere
+numpy 
+annoy 
+pytesseract
+pdf2image
+graphviz
+spire.pdf.common 
+spire.pdf 
+PIL
+
