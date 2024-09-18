@@ -7,5 +7,5 @@ pytesseract
 pdf2image
 graphviz
 spire.pdf 
-PIL
+Pillow
 
