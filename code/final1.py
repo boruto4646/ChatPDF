@@ -10,6 +10,7 @@ from pdf2image import convert_from_bytes
 from multiprocessing import Pool, cpu_count
 import graphviz
 from spire.pdf import *
+from spire.pdf.common import*
 from PIL import Image
 import os
 import pytesseract
